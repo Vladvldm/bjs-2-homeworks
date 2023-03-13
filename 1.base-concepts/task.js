@@ -8,3 +8,5 @@ function solveEquation(a, b, c) {
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   
 }
+
+// percent, contribution, amount, countMonths - процент, вклад, сумма, количество Месяцев
