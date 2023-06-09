@@ -1,12 +1,11 @@
-"use strict"
+"use strict";
+
 function solveEquation(a, b, c) {
   let arr = [];
-  
+
   return arr;
 }
 
-function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-  
-}
+function calculateTotalMortgage(percent, contribution, amount, countMonths) {}
 
 // percent, contribution, amount, countMonths - процент, вклад, сумма, количество Месяцев
