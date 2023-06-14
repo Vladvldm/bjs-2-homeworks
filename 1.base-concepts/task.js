@@ -2,21 +2,45 @@
 
 /* --- Задача №1 --- */
 
+// function solveEquation(a, b, c) {
+//   let arr = [];
+//   // Вычисляем дискримименант
+//   let discriminant = b ** 2 - 4 * a * c; // 5*5=25 - 4*1*4=16 = 9
+//   console.log('discriminant: ' + discriminant)
+
+//   if (discriminant < 0) {
+//     return arr;
+//   } else if (discriminant === 0) {
+//     let root = -b / (2 * a);
+//     return arr.push(root);
+//   } else {
+//     let root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+//     let root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+//     return arr.push(root1, root2);
+//     console.log('root1:' + root1 + 'root2: ' + root2);
+//   }
+//   return arr;
+// }
+// console.log( solveEquation(1, 5, 4));
+
 function solveEquation(a, b, c) {
   let arr = [];
-  // Вычисляем дискримименант
-  let discriminant = b ** 2 - 4 * a * c;
-
-  if (discriminant < 0) {
+  let diskrim = b ** 2 -(4 * a * c);
+  let resZero;
+  // console.log("diskrim - " + diskrim);
+  if (diskrim < 0){
     return arr;
-  } else if (discriminant === 0) {
-    let root = -b / (2 * a);
-    return arr.push(root);
-  } else {
-    let root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
-    let root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
-    return arr.push(root1, root2);
-  }
+  } else if (diskrim == 0){
+
+    arr.push(-b/(2*a));
+    // console.log("diskrim=0 - " + (-b/(2*a)));
+    return arr;
+
+  } else if (diskrim > 0){
+    arr.push((-b + Math.sqrt(diskrim))/(2*a));
+    arr.push((-b - Math.sqrt(diskrim))/(2*a));
+    return arr;
+  } 
   return arr;
 }
 
