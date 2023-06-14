@@ -20,6 +20,8 @@ function solveEquation(a, b, c) {
   return arr;
 }
 
+/* --- Задача №2 --- */
+
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   if (typeof percent !== "number" || percent < 0 || percent > 100) {
     return `Параметр "Процентная ставка" содержит неправильное значение ${percent}`;
