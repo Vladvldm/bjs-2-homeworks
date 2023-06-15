@@ -5,8 +5,7 @@
 function solveEquation(a, b, c) {
   let arr = [];
   // Вычисляем дискримименант
-  let discriminant = b ** 2 - 4 * a * c; // 5*5=25 - 4*1*4=16 = 9
-  console.log("discriminant: " + discriminant);
+  let discriminant = b ** 2 - 4 * a * c;
 
   if (discriminant < 0) {
     return arr;
@@ -17,11 +16,9 @@ function solveEquation(a, b, c) {
     let root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
     let root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
     arr.push(root1, root2);
-    console.log("root1:" + root1 + "root2: " + root2);
   }
   return arr;
 }
-// console.log( solveEquation(1, 5, 4));
 
 /* --- Задача №2 --- */
 
