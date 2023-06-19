@@ -23,29 +23,16 @@ function solveEquation(a, b, c) {
 /* --- Задача №2 --- */
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-  if (typeof percent !== "number" || percent < 0 || percent > 100) {
-    return `Параметр "Процентная ставка" содержит неправильное значение ${percent}`;
+  // Контроль ошибок введенных данных.
+  if (isNaN(percent) || isNaN(contribution) || isNaN(amount)) {
+    return false;
   }
 
-  if (typeof contribution !== "number" || contribution < 0) {
-    return `Параметр "Начальный взнос" содержит неправильное значение ${contribution}`;
-  }
+  let per = percent / 100 / 12; // процентная ставка
+  let sum = amount - contribution; // тело кредита
+  let pay = sum * (per + per / (Math.pow(1 + per, countMonths) - 1));
+  let totalAmount = +(pay * countMonths).toFixed(2); //сумма кредита
 
-  if (typeof amount !== "number" || amount < 0) {
-    return `Параметр "Общая стоимость" содержит неправильное значение ${amount}`;
-  }
-
-  if (typeof countMonths !== "number" || countMonths < 0) {
-    return `Параметр "Срок ипотеки" содержит неправильное значение ${countMonths}`;
-  }
-
-  let bodyCredit = amount - contribution;
-  let monthlyPercent = percent / 12 / 100;
-  let monthlyPayment =
-    bodyCredit *
-    (monthlyPercent +
-      monthlyPercent / ((1 + monthlyPercent) ** countMonths - 1));
-  let totalAmount = parseFloat((monthlyPayment * countMonths).toFixed(2));
   return totalAmount;
 }
 
