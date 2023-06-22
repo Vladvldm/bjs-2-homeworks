@@ -79,6 +79,5 @@ function makeWork(arrOfArr, func) {
   for (let arr of arrOfArr) {
     if (func(...arr) > maxWorkerResult) maxWorkerResult = func(...arr);
   }
-
   return maxWorkerResult;
 }
